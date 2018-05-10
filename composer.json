@@ -6,7 +6,7 @@
         "translatable",
         "laravel",
         "backpack",
-        "digitalunity",
+        "digitalunity"
     ],
     "homepage": "https://github.com/digitalunityca/backpackforlaravel-translatable",
     "license": "MIT",
