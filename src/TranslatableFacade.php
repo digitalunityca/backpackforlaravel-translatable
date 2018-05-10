@@ -5,7 +5,7 @@ namespace DigitalUnity\Translatable;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Spatie\Skeleton\TranslatableClass
+ * @see \DigitalUnity\Translatable\TranslatableClass
  */
 class TranslatableFacade extends Facade
 {

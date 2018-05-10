@@ -24,6 +24,11 @@ class TranslatableServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton('translatable', function(){
+            return new TranslatableClass();
+        });
+
+
         $this->mergeConfigFrom(__DIR__.'/../config/translatable.php', 'translatable');
     }
 }

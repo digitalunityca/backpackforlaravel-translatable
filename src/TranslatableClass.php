@@ -4,6 +4,7 @@ namespace DigitalUnity\Translatable;
 
 class TranslatableClass
 {
+    const PATTERN = '/^\w{1,}__\w{2}$/';
     /**
      * Create a new Skeleton Instance.
      */
@@ -13,13 +14,24 @@ class TranslatableClass
     }
 
     /**
-     * Friendly welcome.
-     *
-     * @param string $phrase Phrase to return
-     * @return string Returns the phrase passed in
+     * Get active languages
+     * @param $withAbbr, if is true return [locale_id => abbr] array, if false - only [locale_id]
+     * @return bool
      */
-    public function echoPhrase($phrase)
+    public function isLocalizedInput(string $inputName): bool
     {
-        return $phrase;
+        return preg_match(self::PATTERN, $inputName);
     }
+
+    /**
+     *
+     * @param string $field
+     * @return array
+     */
+    public function getLocalePatternMatches(string $field):array
+    {
+        preg_match(self::PATTERN, $field, $matches);
+        return $matches;
+    }
+
 }
